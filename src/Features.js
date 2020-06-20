@@ -9,7 +9,7 @@ function Features(props) {
         <legend className="feature__name">
           <h3>{feature}</h3>
         </legend>
-        <Options feature={feature} options={props.features[feature]} selected={props.selected} updateFeature={props.updateFeature} />
+        <Options feature={feature} format={props.USCurrencyFormat} options={props.features[feature]} selected={props.selected} updateFeature={props.updateFeature} />
       </fieldset>
     );
   });

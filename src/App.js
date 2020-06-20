@@ -25,7 +25,7 @@ class App extends Component {
       }
     }
   };
-
+  
   updateFeature = (feature, newValue) => {
     const selected = Object.assign({}, this.state.selected);
     selected[feature] = newValue;
@@ -33,6 +33,11 @@ class App extends Component {
       selected
     });
   };
+
+  USCurrencyFormat = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD'
+    });
 
   render() {
     return (
@@ -43,14 +48,14 @@ class App extends Component {
         <main>
           <form className="main__form">
             <h2>Customize your laptop</h2>
-            <Features features={this.props.features} selected={this.state.selected} updateFeature={this.updateFeature} />
+            <Features features={this.props.features} format={this.USCurrencyFormat} selected={this.state.selected} updateFeature={this.updateFeature} />
           </form>
           <section className="main__summary">
             <h2>Your cart</h2>
-            <Summary selected={this.state.selected} />
+            <Summary format={this.USCurrencyFormat} selected={this.state.selected} />
             <div className="summary__total">
               <div className="summary__total__label">Total</div>
-              <Total selected={this.state.selected}/>
+              <Total format={this.USCurrencyFormat} selected={this.state.selected}/>
             </div>
           </section>
         </main>

@@ -2,10 +2,6 @@ import React from 'react';
 import slugify from 'slugify';
 
 function Options(props) {
-  const USCurrencyFormat = new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD'
-    });
   return props.options.map(item => {
     const itemHash = slugify(JSON.stringify(item));
     return (
@@ -19,7 +15,7 @@ function Options(props) {
           onChange={e => props.updateFeature(props.feature, item)}
         />
         <label htmlFor={itemHash} className="feature__label">
-          {item.name} ({USCurrencyFormat.format(item.cost)})
+          {item.name} ({props.format(item.cost)})
         </label>
       </div>
     );
