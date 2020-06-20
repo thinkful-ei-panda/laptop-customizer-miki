@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import slugify from 'slugify';
 import Features from './Features';
 import Summary from './Summary';
 import Total from './Total'
 import './App.css';
+
 class App extends Component {
   state = {
     selected: {
@@ -56,7 +56,7 @@ class App extends Component {
         </main>
       </div>
     );
-  }
-}
+  };
+};
 
 export default App;
