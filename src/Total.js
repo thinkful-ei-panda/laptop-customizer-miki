@@ -7,7 +7,7 @@ function Total(props) {
     );   
     return (
         <div className="summary__total__value">
-            {props.format.format(total)}
+            {props.format(total)}
         </div>
     );
 };

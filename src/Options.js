@@ -15,7 +15,7 @@ function Options(props) {
           onChange={e => props.updateFeature(props.feature, item)}
         />
         <label htmlFor={itemHash} className="feature__label">
-          {item.name} ({props.format.format(item.cost)})
+          {item.name} ({props.format(item.cost)})
         </label>
       </div>
     );

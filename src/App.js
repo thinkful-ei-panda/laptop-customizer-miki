@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import Features from './Features';
-import Summary from './Summary';
-import Total from './Total'
+import Form from './Form';
+import Cart from './Cart';
 import './App.css';
 
 class App extends Component {
@@ -46,18 +45,8 @@ class App extends Component {
           <h1>ELF Computing | Laptops</h1>
         </header>
         <main>
-          <form className="main__form">
-            <h2>Customize your laptop</h2>
-            <Features features={this.props.features} format={this.USCurrencyFormat} selected={this.state.selected} updateFeature={this.updateFeature} />
-          </form>
-          <section className="main__summary">
-            <h2>Your cart</h2>
-            <Summary format={this.USCurrencyFormat} selected={this.state.selected} />
-            <div className="summary__total">
-              <div className="summary__total__label">Total</div>
-              <Total format={this.USCurrencyFormat} selected={this.state.selected}/>
-            </div>
-          </section>
+          <Form features={this.props.features} format={this.USCurrencyFormat.format} selected={this.state.selected} updateFeature={this.updateFeature} />
+          <Cart format={this.USCurrencyFormat.format} selected={this.state.selected} />
         </main>
       </div>
     );
