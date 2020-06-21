@@ -10,7 +10,7 @@ function Summary(props) {
         <div className="summary__option__label">{feature} </div>
         <div className="summary__option__value">{selectedOption.name}</div>
         <div className="summary__option__cost">
-          {props.format(selectedOption.cost)}
+          {props.format.format(selectedOption.cost)}
         </div>
       </div>
     );
