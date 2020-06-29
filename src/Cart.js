@@ -7,10 +7,7 @@ function Cart(props) {
         <section className="main__summary">
             <h2>Your cart</h2>
             <Summary format={props.format} selected={props.selected} />
-            <div className="summary__total">
-                <div className="summary__total__label">Total</div>
-                <Total format={props.format} selected={props.selected}/>
-            </div>
+            <Total format={props.format} selected={props.selected} />
         </section>
     );
 };

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Header from './Header';
 import Form from './Form';
 import Cart from './Cart';
 import './App.css';
@@ -41,11 +42,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header>
-          <h1>ELF Computing | Laptops</h1>
-        </header>
+        <Header />
         <main>
-          <Form features={this.props.features} format={this.USCurrencyFormat.format} selected={this.state.selected} updateFeature={this.updateFeature} />
+          <Form format={this.USCurrencyFormat.format} selected={this.state.selected} updateFeature={this.updateFeature} />
           <Cart format={this.USCurrencyFormat.format} selected={this.state.selected} />
         </main>
       </div>
